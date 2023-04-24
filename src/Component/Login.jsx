@@ -16,7 +16,7 @@ const Login = () => {
 
   return (
     <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero-content flex-col">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Please Login !</h1>
         </div>
@@ -55,9 +55,11 @@ const Login = () => {
               <button className="btn btn-primary">Login</button>
             </div>
           </form>
-          <Link to="/register">
-            <button className="btn btn-link">New to Auth Master?</button>
-          </Link>
+          <p className="mb-4 ml-8">
+            <Link to="/register" className="label-text-alt link link-hover">
+                New to Auth Master? Please Register
+            </Link>
+          </p>
         </div>
       </div>
     </div>
