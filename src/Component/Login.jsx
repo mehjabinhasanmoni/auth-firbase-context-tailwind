@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
-    const {user, signIn} = useContext(AuthContext);
+    const {user, signIn, signInWithGoogle} = useContext(AuthContext);
 
 
     const handleLogin = event =>{
@@ -24,6 +24,17 @@ const Login = () => {
             console.log(error);
         })
 
+    }
+
+    const handleGoogleSignIn =() =>{
+      signInWithGoogle()
+      .then(result =>{
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch(error =>{
+        console.log(error.message);
+      })
     }
 
 
@@ -73,6 +84,9 @@ const Login = () => {
                 New to Auth Master? Please Register
             </Link>
           </p>
+          <div>
+          <button onClick={handleGoogleSignIn} className="btn btn-active btn-primary">Google</button>
+          </div>
         </div>
       </div>
     </div>
